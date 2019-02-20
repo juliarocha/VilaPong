@@ -1,0 +1,146 @@
+//
+//  Physics.swift
+//  BeerPong
+//
+//  Created by Julia Rocha on 12/02/19.
+//  Copyright © 2019 Nathalia Inacio. All rights reserved.
+//
+
+import Foundation
+import ARKit
+import UIKit
+import SceneKit
+
+protocol Physics {
+    func addPhysics(to node: SCNNode)
+    func addTablePhysics(to node: SCNNode)
+    func addCupsPhysics(to node: SCNNode)
+    func addFloorPhysics(to node: SCNNode) 
+}
+
+extension Physics {
+    
+    // MARK: - Physics Configuration
+    
+    /// - Tag: Adding all physics
+    func addPhysics(to node: SCNNode) {
+        addTablePhysics(to: node)
+        addCupsPhysics(to: node)
+        addFloorPhysics(to: node)
+    }
+    
+    /// - Tag: Adding table physics
+    func addTablePhysics(to node: SCNNode) {
+        let tableRestitution = CGFloat(1.3)
+        let legThickness = CGFloat(0.06)
+        let legHeight = CGFloat(0.67)
+        let tableTopHeight = CGFloat(0.06)
+        let tableTopWidth = CGFloat(1.0)
+        let tableTopLength = CGFloat(1.5)
+        let tableName = "table"
+        let tableTopName = "top"
+        let legName = "leg"
+        if let tableNode = node.childNode(withName: tableName, recursively: true) {
+            let legs = tableNode.childNodes.filter {
+                if let name = $0.name {
+                    return name.contains(legName)
+                } else { return false }
+            }
+            let legGeometry = SCNBox(width: legThickness, height: legHeight, length: legThickness, chamferRadius: 0)
+            let legShape = SCNPhysicsShape(geometry: legGeometry)
+            legs.forEach {
+                let physics = SCNPhysicsBody(type: .static, shape: legShape)
+                physics.restitution = tableRestitution
+                $0.physicsBody = physics
+            }
+            if let tableTopNode = node.childNode(withName: tableTopName, recursively: true) {
+                let tableTopShape = SCNPhysicsShape(geometry: SCNBox(width: tableTopWidth, height: tableTopHeight, length: tableTopLength, chamferRadius: 0))
+                let tableTopPhysics = SCNPhysicsBody(type: .static, shape: tableTopShape)
+                tableTopPhysics.restitution = tableRestitution
+                tableTopNode.physicsBody = tableTopPhysics
+            } else {
+                fatalError("Error finding table-top")
+            }
+        } else {
+            fatalError("Error finding table")
+        }
+    }
+    
+    /// - Tag: Adding cups physics
+    func addCupsPhysics(to node: SCNNode) {
+        let bottomRestitution = CGFloat(0.0)
+        let sideRestitution = CGFloat(0.1)
+        let cupsName = "cups"
+        let cupsName2 = "cups2"
+        let cupBottomName = "bottom"
+        let cupSideName = "side"
+        if let cupsNode = node.childNode(withName: cupsName, recursively: true) {
+            for cup in cupsNode.childNodes {
+                for child in cup.childNodes {
+                    let shapeOptions = [SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.concavePolyhedron]
+                    let childShape = SCNPhysicsShape(node: child, options: shapeOptions)
+                    let childPhysics = SCNPhysicsBody(type: .static, shape: childShape)
+                    if child.name == cupBottomName {
+                        childPhysics.contactTestBitMask = Ball().categoryBitMask
+                        childPhysics.restitution = bottomRestitution
+                    } else if child.name == cupSideName {
+                        if let geometry = child.geometry {
+                            geometry.materials.forEach({ $0.isDoubleSided = true })
+                        } else {
+                            fatalError("Error with cup child geometry")
+                        }
+                        childPhysics.restitution = sideRestitution
+                    } else {
+                        fatalError("Error with cup child name")
+                    }
+                    child.physicsBody = childPhysics
+                }
+            }
+        } else {
+            fatalError("Error finding cups")
+        }
+        
+        if let cupsNode = node.childNode(withName: cupsName2, recursively: true) {
+            for cup in cupsNode.childNodes {
+                for child in cup.childNodes {
+                    let shapeOptions = [SCNPhysicsShape.Option.type: SCNPhysicsShape.ShapeType.concavePolyhedron]
+                    let childShape = SCNPhysicsShape(node: child, options: shapeOptions)
+                    let childPhysics = SCNPhysicsBody(type: .static, shape: childShape)
+                    if child.name == cupBottomName {
+                        childPhysics.contactTestBitMask = Ball().categoryBitMask
+                        childPhysics.restitution = bottomRestitution
+                    } else if child.name == cupSideName {
+                        if let geometry = child.geometry {
+                            geometry.materials.forEach({ $0.isDoubleSided = true })
+                        } else {
+                            fatalError("Error with cup child geometry")
+                        }
+                        childPhysics.restitution = sideRestitution
+                    } else {
+                        fatalError("Error with cup child name")
+                    }
+                    child.physicsBody = childPhysics
+                }
+            }
+        } else {
+            fatalError("Error finding cups")
+        }
+    }
+    
+    /// - Tag: Adding floor physics
+    func addFloorPhysics(to node: SCNNode) {
+        let floorRollingFriction = CGFloat(0.05)
+        let floorRestitutuion = CGFloat(1.1)
+        let floorName = "floor"
+        
+        if let floorNode = node.childNode(withName: floorName, recursively: true) {
+            let floorPhysics = SCNPhysicsBody(type: .static, shape: nil)
+            floorPhysics.rollingFriction = floorRollingFriction
+            floorPhysics.restitution = floorRestitutuion
+            floorNode.physicsBody = floorPhysics
+        } else {
+            fatalError("Error finding floor")
+        }
+    }
+    
+}

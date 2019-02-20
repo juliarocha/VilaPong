@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		111DC86920ACAB690037F7B1 /* VPGRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DC86820ACAB690037F7B1 /* VPGRoundedButton.swift */; };
+		112FE5671F4F95A200BF85EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112FE5661F4F95A200BF85EA /* Assets.xcassets */; };
+		11E9720A209A355F006E3D26 /* VPGUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E97209209A355F006E3D26 /* VPGUtilities.swift */; };
+		1550DBFE221D038F003DB615 /* VPGPhysicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */; };
+		1550DC00221D05A6003DB615 /* VPGBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DBFF221D05A6003DB615 /* VPGBall.swift */; };
+		1550DC02221D07A4003DB615 /* VPGCups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC01221D07A4003DB615 /* VPGCups.swift */; };
+		1550DC04221D07BA003DB615 /* VPGAnimationsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC03221D07BA003DB615 /* VPGAnimationsProtocol.swift */; };
+		1550DC06221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC05221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift */; };
+		1550DC0D221D3208003DB615 /* ARWorldSharerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC0B221D3207003DB615 /* ARWorldSharerProtocol.swift */; };
+		1550DC0E221D3208003DB615 /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC0C221D3208003DB615 /* MultipeerSession.swift */; };
+		5CB92B4F20D852B0004D38D8 /* VPGSnapshotAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB92B4E20D852B0004D38D8 /* VPGSnapshotAnchor.swift */; };
+		842316E01F2030C300D189D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842316DF1F2030C300D189D1 /* AppDelegate.swift */; };
+		842316E41F2030C300D189D1 /* VilaPongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842316E31F2030C300D189D1 /* VilaPongVC.swift */; };
+		842316E71F2030C300D189D1 /* VilaPong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842316E51F2030C300D189D1 /* VilaPong.storyboard */; };
+		842316EC1F2030C300D189D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */; };
+		84ABEA0A1F3D15E70052D547 /* VilaPong.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 84ABEA091F3D15E70052D547 /* VilaPong.scnassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		111DC86820ACAB690037F7B1 /* VPGRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGRoundedButton.swift; sourceTree = "<group>"; };
+		112FE5661F4F95A200BF85EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11E97209209A355F006E3D26 /* VPGUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGUtilities.swift; sourceTree = "<group>"; };
+		1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGPhysicsProtocol.swift; sourceTree = "<group>"; };
+		1550DBFF221D05A6003DB615 /* VPGBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGBall.swift; sourceTree = "<group>"; };
+		1550DC01221D07A4003DB615 /* VPGCups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGCups.swift; sourceTree = "<group>"; };
+		1550DC03221D07BA003DB615 /* VPGAnimationsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGAnimationsProtocol.swift; sourceTree = "<group>"; };
+		1550DC05221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGPlaneDetectionProtocol.swift; sourceTree = "<group>"; };
+		1550DC0B221D3207003DB615 /* ARWorldSharerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARWorldSharerProtocol.swift; sourceTree = "<group>"; };
+		1550DC0C221D3208003DB615 /* MultipeerSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipeerSession.swift; sourceTree = "<group>"; };
+		5CB92B4E20D852B0004D38D8 /* VPGSnapshotAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPGSnapshotAnchor.swift; sourceTree = "<group>"; };
+		842316DC1F2030C300D189D1 /* VilaPongDevelop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VilaPongDevelop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842316DF1F2030C300D189D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		842316E31F2030C300D189D1 /* VilaPongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilaPongVC.swift; sourceTree = "<group>"; };
+		842316E61F2030C300D189D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VilaPong.storyboard; sourceTree = "<group>"; };
+		842316EB1F2030C300D189D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		842316ED1F2030C300D189D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84ABEA091F3D15E70052D547 /* VilaPong.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = VilaPong.scnassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		842316D91F2030C300D189D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1550DC07221D30A7003DB615 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				842316E31F2030C300D189D1 /* VilaPongVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1550DC08221D30AE003DB615 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842316E51F2030C300D189D1 /* VilaPong.storyboard */,
+				842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1550DC09221D30B6003DB615 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11E97209209A355F006E3D26 /* VPGUtilities.swift */,
+				111DC86820ACAB690037F7B1 /* VPGRoundedButton.swift */,
+				1550DBFF221D05A6003DB615 /* VPGBall.swift */,
+				1550DC01221D07A4003DB615 /* VPGCups.swift */,
+				5CB92B4E20D852B0004D38D8 /* VPGSnapshotAnchor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1550DC0A221D30BC003DB615 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */,
+				1550DC03221D07BA003DB615 /* VPGAnimationsProtocol.swift */,
+				1550DC05221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1550DC0F221D3210003DB615 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				1550DC0C221D3208003DB615 /* MultipeerSession.swift */,
+				1550DC0B221D3207003DB615 /* ARWorldSharerProtocol.swift */,
+			);
+			path = Connectivity;
+			sourceTree = "<group>";
+		};
+		842316D31F2030C300D189D1 = {
+			isa = PBXGroup;
+			children = (
+				842316DE1F2030C300D189D1 /* VilaPongDevelop */,
+				842316DD1F2030C300D189D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		842316DD1F2030C300D189D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				842316DC1F2030C300D189D1 /* VilaPongDevelop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		842316DE1F2030C300D189D1 /* VilaPongDevelop */ = {
+			isa = PBXGroup;
+			children = (
+				1550DC0F221D3210003DB615 /* Connectivity */,
+				1550DC0A221D30BC003DB615 /* Protocols */,
+				1550DC09221D30B6003DB615 /* Model */,
+				1550DC08221D30AE003DB615 /* View */,
+				1550DC07221D30A7003DB615 /* Controller */,
+				842316DF1F2030C300D189D1 /* AppDelegate.swift */,
+				842316ED1F2030C300D189D1 /* Info.plist */,
+				84ABEA091F3D15E70052D547 /* VilaPong.scnassets */,
+				112FE5661F4F95A200BF85EA /* Assets.xcassets */,
+			);
+			path = VilaPongDevelop;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		842316DB1F2030C300D189D1 /* VilaPongDevelop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 842316F01F2030C300D189D1 /* Build configuration list for PBXNativeTarget "VilaPongDevelop" */;
+			buildPhases = (
+				842316D81F2030C300D189D1 /* Sources */,
+				842316D91F2030C300D189D1 /* Frameworks */,
+				842316DA1F2030C300D189D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VilaPongDevelop;
+			productName = ARMultiuser;
+			productReference = 842316DC1F2030C300D189D1 /* VilaPongDevelop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		842316D41F2030C300D189D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					842316DB1F2030C300D189D1 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 842316D71F2030C300D189D1 /* Build configuration list for PBXProject "VilaPongDevelop" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 842316D31F2030C300D189D1;
+			productRefGroup = 842316DD1F2030C300D189D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				842316DB1F2030C300D189D1 /* VilaPongDevelop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		842316DA1F2030C300D189D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84ABEA0A1F3D15E70052D547 /* VilaPong.scnassets in Resources */,
+				842316EC1F2030C300D189D1 /* LaunchScreen.storyboard in Resources */,
+				112FE5671F4F95A200BF85EA /* Assets.xcassets in Resources */,
+				842316E71F2030C300D189D1 /* VilaPong.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		842316D81F2030C300D189D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1550DC0D221D3208003DB615 /* ARWorldSharerProtocol.swift in Sources */,
+				1550DC00221D05A6003DB615 /* VPGBall.swift in Sources */,
+				1550DC04221D07BA003DB615 /* VPGAnimationsProtocol.swift in Sources */,
+				11E9720A209A355F006E3D26 /* VPGUtilities.swift in Sources */,
+				1550DBFE221D038F003DB615 /* VPGPhysicsProtocol.swift in Sources */,
+				5CB92B4F20D852B0004D38D8 /* VPGSnapshotAnchor.swift in Sources */,
+				1550DC06221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift in Sources */,
+				111DC86920ACAB690037F7B1 /* VPGRoundedButton.swift in Sources */,
+				1550DC02221D07A4003DB615 /* VPGCups.swift in Sources */,
+				842316E41F2030C300D189D1 /* VilaPongVC.swift in Sources */,
+				1550DC0E221D3208003DB615 /* MultipeerSession.swift in Sources */,
+				842316E01F2030C300D189D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		842316E51F2030C300D189D1 /* VilaPong.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842316E61F2030C300D189D1 /* Base */,
+			);
+			name = VilaPong.storyboard;
+			sourceTree = "<group>";
+		};
+		842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842316EB1F2030C300D189D1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		842316EE1F2030C300D189D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		842316EF1F2030C300D189D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		842316F11F2030C300D189D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32H23754C8;
+				INFOPLIST_FILE = "$(SRCROOT)/VilaPongDevelop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy.VilaPongDevelop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		842316F21F2030C300D189D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32H23754C8;
+				INFOPLIST_FILE = "$(SRCROOT)/VilaPongDevelop/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy.VilaPongDevelop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		842316D71F2030C300D189D1 /* Build configuration list for PBXProject "VilaPongDevelop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842316EE1F2030C300D189D1 /* Debug */,
+				842316EF1F2030C300D189D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		842316F01F2030C300D189D1 /* Build configuration list for PBXNativeTarget "VilaPongDevelop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				842316F11F2030C300D189D1 /* Debug */,
+				842316F21F2030C300D189D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 842316D41F2030C300D189D1 /* Project object */;
+}
