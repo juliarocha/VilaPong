@@ -28,20 +28,10 @@ class Cups:SCNNode {
         }
         
         // Set the scene to the view
-        
-       
-        smoke.particleSize = 6
-        smoke.particleColor = UIColor.black
-        
-        let particleMother = SCNNode()
-        particleMother.position = SCNVector3(x: 0, y: 0, z: 3.0)
-        particleMother.addParticleSystem(smoke)
-
-        cups.addChildNode(particleMother)
-        cups2.addChildNode(particleMother)
-        
+    
         self.addChildNode(cups)
         self.addChildNode(cups2)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

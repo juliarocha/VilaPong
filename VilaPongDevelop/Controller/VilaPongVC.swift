@@ -14,7 +14,7 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
     
     
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
@@ -22,12 +22,24 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
     @IBOutlet weak var loadExperienceButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var snapshotThumbnail: UIImageView!
+   
+    
+    // MARK: - Action
+    
+    @IBAction func cancel(_ sender: Any) {
+        
+         self.dismiss(animated: false, completion: nil)
+        
+    }
+    
+    
     
     /// - Tag: Game Logics
     private var tablePlaced = false
     private var planeNode: SCNNode?
     var sunkCups: [SCNNode] = []
     var fromSceneView: ARSCNView?
+    var player: String?
     
     /// - Tag: Connectivity
     var mapProvider: MCPeerID?
@@ -55,6 +67,8 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
         if mapDataFromFile != nil {
             self.loadExperienceButton.isHidden = false
         }
+      
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -109,8 +123,8 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
     }
 
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-        let cupBottom = contact.nodeB
-        if let cup = cupBottom.parent {
+        let cupWater = contact.nodeB
+        if let cup = cupWater.parent {
             let ball = contact.nodeA
             if let ballPhysics = ball.physicsBody {
                 ballPhysics.restitution = 0.0
@@ -119,7 +133,7 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
             }
             fadeOut(cup, ball)
         } else {
-            fatalError("Error loading cup bottom parent")
+            fatalError("Error loading cup water parent")
         }
     }
     

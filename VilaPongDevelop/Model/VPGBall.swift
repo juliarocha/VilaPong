@@ -2,7 +2,7 @@ import ARKit
 
 class Ball: SCNNode {
     private let ballRadius = CGFloat(0.02)
-    private let ballColor = UIColor(red: 1.0, green: 0.6, blue: 0.2, alpha: 0.995)
+    private let ballColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 2/255.0, alpha: 1)
     private let ballRollingFriction = CGFloat(0.05)
     private let ballStartPosition = SCNVector3(x: 0, y: -0.05, z: -0.2)
     private let appliedForce = simd_make_float4(-1.7, 0, -2.0, 0)
