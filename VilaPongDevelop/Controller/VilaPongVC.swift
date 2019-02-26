@@ -24,14 +24,24 @@ class VilaPongVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate, SCNPhy
     @IBOutlet weak var snapshotThumbnail: UIImageView!
    
     
-    // MARK: - Action
+    // MARK: - Actions
     
     @IBAction func cancel(_ sender: Any) {
         
          self.dismiss(animated: false, completion: nil)
-        
     }
     
+
+    @IBAction func cancelView2(_ sender: Any) {
+        
+          self.dismiss(animated: false, completion: nil)
+    }
+    
+    
+    @IBAction func playAgain(_ sender: Any) {
+        
+        self.dismiss(animated: false, completion: nil)
+    }
     
     
     /// - Tag: Game Logics
