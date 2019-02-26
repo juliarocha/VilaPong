@@ -1,9 +1,10 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A custom button that stands out over the camera view.
-*/
+//
+//  RoundedButton.swift
+//  ArPUCRio
+//
+//  Created by Júlia Rocha on 13/02/19.
+//  Copyright © 2019 Apple Developer Academy 2018 | PUC-Rio. All rights reserved.
+//
 
 import UIKit
 

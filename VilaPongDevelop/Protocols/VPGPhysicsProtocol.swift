@@ -1,9 +1,9 @@
 //
-//  Physics.swift
-//  BeerPong
+//  PhysicsProtocol.swift
+//  ArPUCRio
 //
 //  Created by Julia Rocha on 12/02/19.
-//  Copyright © 2019 Nathalia Inacio. All rights reserved.
+//  Copyright © 2019 Apple Developer Academy 2018 | PUC-Rio. All rights reserved.
 //
 
 import Foundation
@@ -11,28 +11,51 @@ import ARKit
 import UIKit
 import SceneKit
 
+// MARK: - Declaration
+
 protocol Physics {
+
+    /**
+     Function that add all physics related to the scene to a node.
+
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addPhysics(to node: SCNNode)
+
+    /**
+     Function that add the table physics to a node.
+
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addTablePhysics(to node: SCNNode)
+
+    /**
+     Function that add the cups physics to a node
+
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addCupsPhysics(to node: SCNNode)
     func addFloorPhysics(to node: SCNNode)
     func addTrianglesPhysics(to node: SCNNode)
 }
 
 extension Physics {
-    
+
     // MARK: - Physics Configuration
-    
-    /// - Tag: Adding all physics
+
+    /// Function to add all physics
     func addPhysics(to node: SCNNode) {
         addTablePhysics(to: node)
         addCupsPhysics(to: node)
         addFloorPhysics(to: node)
         addTrianglesPhysics(to: node)
     }
+
     
-    
-    
+
     /// - Tag: Adding triangles physics
     func addTrianglesPhysics(to node: SCNNode) {
         let triangleRestitution = CGFloat(1.3)
@@ -43,9 +66,9 @@ extension Physics {
         let triangle2Name = "triangle2"
         let redtriangleName = "red"
         let bluetriangleName = "blue"
-    
+
         if let triangleNode = node.childNode(withName: triangleName, recursively: true) {
-    
+
             if let redtriangleNode = triangleNode.childNode(withName: redtriangleName, recursively: true) {
                 let triangleShape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
                 let trianglePhysics = SCNPhysicsBody(type: .static, shape: triangleShape)
@@ -57,9 +80,9 @@ extension Physics {
         } else {
             fatalError("Error finding triangle")
         }
-        
+
         if let triangle2Node = node.childNode(withName: triangle2Name, recursively: true) {
-            
+
             if let bluetriangleNode = triangle2Node.childNode(withName: bluetriangleName, recursively: true) {
                 let triangle2Shape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
                 let triangle2Physics = SCNPhysicsBody(type: .static, shape: triangle2Shape)
@@ -72,10 +95,10 @@ extension Physics {
             fatalError("Error finding triangle 2")
         }
     }
-    
-    
-    
-    
+
+
+
+
     /// - Tag: Adding table physics
     func addTablePhysics(to node: SCNNode) {
         let tableRestitution = CGFloat(1.3)
@@ -112,8 +135,8 @@ extension Physics {
             fatalError("Error finding table")
         }
     }
-    
-    /// - Tag: Adding cups physics
+
+    /// Function to add cups physics
     func addCupsPhysics(to node: SCNNode) {
         let bottomRestitution = CGFloat(0.0)
         let sideRestitution = CGFloat(0.1)
@@ -122,7 +145,7 @@ extension Physics {
         let cupBottomName = "bottom"
         let cupSideName = "side"
         let cupWaterName = "water"
-        
+
         if let cupsNode = node.childNode(withName: cupsName, recursively: true) {
             for cup in cupsNode.childNodes {
                 for child in cup.childNodes {
@@ -149,7 +172,6 @@ extension Physics {
         } else {
             fatalError("Error finding cups")
         }
-        
         if let cupsNode = node.childNode(withName: cupsName2, recursively: true) {
             for cup in cupsNode.childNodes {
                 for child in cup.childNodes {
@@ -176,15 +198,14 @@ extension Physics {
         } else {
             fatalError("Error finding cups")
         }
-        
+
     }
-    
-    /// - Tag: Adding floor physics
+
+    /// Function to add floor physics
     func addFloorPhysics(to node: SCNNode) {
         let floorRollingFriction = CGFloat(0.05)
         let floorRestitutuion = CGFloat(1.1)
         let floorName = "floor"
-        
         if let floorNode = node.childNode(withName: floorName, recursively: true) {
             let floorPhysics = SCNPhysicsBody(type: .static, shape: nil)
             floorPhysics.rollingFriction = floorRollingFriction
@@ -194,5 +215,5 @@ extension Physics {
             fatalError("Error finding floor")
         }
     }
-    
+
 }
