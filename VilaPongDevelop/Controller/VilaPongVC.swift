@@ -14,9 +14,9 @@ import MultipeerConnectivity
 // MARK: - Declaration
 
 class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
-    
+
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
@@ -24,27 +24,39 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
     @IBOutlet weak var loadExperienceButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var snapshotThumbnail: UIImageView!
-    
+
+
+    // MARK: - Action
+
+    @IBAction func cancel(_ sender: Any) {
+
+         self.dismiss(animated: false, completion: nil)
+
+    }
+
+
+
     // MARK: - Game Logistics
-    
+
     /// TEMP
     private var tablePlaced = false
     private var planeNode: SCNNode?
     var fromSceneView: ARSCNView?
-    
+    var player: String?
+
     /// Array with the sunk cups.
     var sunkCups: [SCNNode] = []
-    
+
     // MARK: - Connectivity helpers
-    
+
     /// Reference to multipeer connectivity session
     var multipeerSession: MultipeerSession?
-    
+
     /// Checks if the player is connected to another player
     var isPlayerConnected: Bool?
 
     // MARK: - View Life Cycle
-    
+
     /// Function that makes stops the view from autorotating
     override var shouldAutorotate: Bool {
         return false
@@ -55,22 +67,24 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         initScene()
         addPhysicsContactDelegate()
         addLighting()
-        
+
         // Set the scene view reference
         self.fromSceneView = self.sceneView
-        
+
         // Set the multipeer session
         multipeerSession = MultipeerSession(receivedDataHandler: receivedData)
-        
+
         // Set the player for the not connected state
         isPlayerConnected = false
-        
+
         // TEMP
         if mapDataFromFile != nil {
             self.loadExperienceButton.isHidden = false
         }
+
+
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard ARWorldTrackingConfiguration.isSupported else {
@@ -84,39 +98,39 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
                 determine whether to show UI for launching AR experiences.
             """) // For details, see https://developer.apple.com/documentation/arkit
         }
-        
+
         // Start the view's AR session.
         sceneView.session.delegate = self
         sceneView.session.run(defaultConfiguration)
         UIApplication.shared.isIdleTimerDisabled = true
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
     }
-    
+
     // MARK: - Delegates and Lighting
-    
+
     // Function that sets the scene to the view and it's delegate
     private func initScene() {
         sceneView.delegate = self
         sceneView.scene = SCNScene()
         sceneView.session.delegate = self
     }
-    
+
     /// Function that sets up the lightning of the scene.
     private func addLighting() {
         sceneView.autoenablesDefaultLighting = true
     }
     
     // MARK: - ARSessionDelegate
-    
+
     // TEMP
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {
         updateSessionInfoLabel(for: session.currentFrame!, trackingState: camera.trackingState)
     }
-    
+
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         switch frame.worldMappingStatus {
         case .extending, .mapped:
@@ -131,28 +145,28 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         """
         updateSessionInfoLabel(for: frame, trackingState: frame.camera.trackingState)
     }
-    
+
     // MARK: - ARSessionObserver
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay.
         sessionInfoLabel.text = "Session was interrupted"
     }
-    
+
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required.
         sessionInfoLabel.text = "Session interruption ended"
     }
-    
+
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user.
         sessionInfoLabel.text = "Session failed: \(error.localizedDescription)"
         resetTracking(nil)
     }
-    
+
     func sessionShouldAttemptRelocalization(_ session: ARSession) -> Bool {
         return true
     }
-    
+
     private func updateSessionInfoLabel(for frame: ARFrame, trackingState: ARCamera.TrackingState) {
         let message: String
         snapshotThumbnail.isHidden = true
@@ -174,9 +188,9 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         sessionInfoLabel.text = message
         sessionInfoView.isHidden = message.isEmpty
     }
-    
+
     // MARK: - Persistence: Saving and Loading
-    
+
     // TEMP
     lazy var mapSaveURL: URL = {
         do {
@@ -190,23 +204,23 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
             fatalError("Can't get file save URL: \(error.localizedDescription)")
         }
     }()
-    
+
     // Called opportunistically to verify that map data can be loaded from filesystem.
     var mapDataFromFile: Data? {
         return try? Data(contentsOf: mapSaveURL)
     }
-    
+
     /// - Tag: GetWorldMap
     @IBAction func saveExperience(_ button: UIButton) {
         sceneView.session.getCurrentWorldMap { worldMap, error in
             guard let map = worldMap
                 else { self.showAlert(title: "Can't get current world map", message: error!.localizedDescription); return }
-            
+
             // Add a snapshot image indicating where the map was captured.
             guard let snapshotAnchor = VPGSnapshotAnchor(capturing: self.sceneView)
                 else { fatalError("Can't take snapshot") }
             map.anchors.append(snapshotAnchor)
-            
+
             do {
                 let data = try NSKeyedArchiver.archivedData(withRootObject: map, requiringSecureCoding: true)
                 try data.write(to: self.mapSaveURL, options: [.atomic])
@@ -219,10 +233,10 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
             }
         }
     }
-    
+
     ///  Runs World Map
     @IBAction func loadExperience(_ button: UIButton) {
-        
+
         /// Read WorldMap
         let worldMap: ARWorldMap = {
             guard let data = mapDataFromFile
@@ -264,7 +278,7 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         configuration.environmentTexturing = .automatic
         return configuration
     }
-    
+
     @IBAction func resetTracking(_ sender: UIButton?) {
         sceneView.session.run(defaultConfiguration, options: [.resetTracking, .removeExistingAnchors])
         let node = sceneView.scene.rootNode
@@ -275,9 +289,9 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         isRelocalizingMap = false
         virtualObjectAnchor = nil
     }
-    
+
     // MARK: - Placing AR Content
-    
+
     /// - Tag: Place table and throw balls
     @IBAction func handleSceneTap(_ sender: UITapGestureRecognizer) {
         if tablePlaced {
@@ -309,20 +323,20 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         referenceNode = tableScene.rootNode
         return referenceNode
     }()
-    
-    
+
+
     // MARK: - Connectivity configuration
-    
+
     /// - Tag: Receiving Data
     func receivedData(_ data: Data, from peer: MCPeerID) {
         let jsonDecoder = JSONDecoder()
         let matrix = try? jsonDecoder.decode(CustomFloat4x4.self, from: data)
         receiveBall(from: matrix!.asSimd_float4x4)
-        
+
     }
-    
+
     // - MARK: Loading local map
-    
+
     /// Loads the ARWorldMap from a local Data file
     @objc private func retrieveWorldMap() {
         let bundle = Bundle.main
@@ -356,10 +370,10 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         worldMap.anchors.removeAll(where: { $0 is VPGSnapshotAnchor })
         // this app's standard world tracking settings
         let configuration = self.defaultConfiguration
-        
+
         //sets the initial world map as the persisted world tracked map
         configuration.initialWorldMap = worldMap
-        
+
         // runs the session
         self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         // sets the load button to disable
@@ -368,16 +382,16 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
 //        self.multipeerSession?.serviceBrowser.startBrowsingForPeers()
 //        self.multipeerSession?.serviceAdvertiser.startAdvertisingPeer()
     }
-    
+
 }
 
 // MARK: - Physics Contact Delegate With Animations
 extension VilaPongVC: SCNPhysicsContactDelegate, Animations {
-    
+
     private func addPhysicsContactDelegate() {
         sceneView.scene.physicsWorld.contactDelegate = self
     }
-    
+
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let cupBottom = contact.nodeB
         if let cup = cupBottom.parent {
@@ -393,12 +407,12 @@ extension VilaPongVC: SCNPhysicsContactDelegate, Animations {
             fatalError("Error loading cup bottom parent")
         }
     }
-    
+
 }
 
 // MARK: - Game Physics Events
 extension VilaPongVC: Physics, ARSharer {
-    
+
     func throwBall(iDidIt: Bool) {
         guard  let multipeerSession = self.multipeerSession else {
             fatalError("Please set multipeerSession")
@@ -411,7 +425,7 @@ extension VilaPongVC: Physics, ARSharer {
             ball.addTo(sceneView)
             ball.position(in: sceneView, from: true, on: virtualObject)
             ball.applyForce(camera)
-            
+
             // FIXME: - Not working send to multipeer
             if !multipeerSession.connectedPeers.isEmpty {
                 guard let positionMatrix = ball.positionAndOrientation else {
@@ -426,10 +440,10 @@ extension VilaPongVC: Physics, ARSharer {
             fatalError("Error loading current frame")
         }
     }
-    
+
     // FIXME: - Not yet working
     func receiveBall(from position: simd_float4x4) {
-        
+
         addPhysics(to: virtualObject)
         let ball = Ball()
         ball.hostViewController = self
@@ -445,7 +459,7 @@ extension VilaPongVC: Physics, ARSharer {
 
 // MARK: - ARSCNViewDelegate
 extension VilaPongVC: ARSCNViewDelegate {
-    
+
     /// - Tag: Restore virtual content
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor.name == virtualObjectAnchorName else {
@@ -468,5 +482,3 @@ extension VilaPongVC: ARSCNViewDelegate {
         node.addChildNode(virtualObject)
     }
 }
-
-

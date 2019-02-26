@@ -12,23 +12,23 @@ import SceneKit
 // MARK: - Declaration
 
 class Cups:SCNNode {
-    
+
     // MARK: - Initializer
     override init() {
         super.init()
-        
+
         /// The scene where the cups are present.
         guard let cupsScn = SCNScene(named: "art.scnassets/table.scn") else {
             debugPrint("Error in model 2")
             return
         }
-        
+
         /// The cups of side one.
         guard let cups = cupsScn.rootNode.childNode(withName: "cups0", recursively: true) else {
             debugPrint("Error in Node1")
             return
         }
-        
+
         /// The cus of side two.
         guard let cups2 = cupsScn.rootNode.childNode(withName: "cups2", recursively: true) else {
             debugPrint("Error in Node2")
@@ -36,12 +36,12 @@ class Cups:SCNNode {
         }
         self.addChildNode(cups)
         self.addChildNode(cups2)
+
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-}
 
+
+}

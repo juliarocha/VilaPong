@@ -12,28 +12,24 @@ import MultipeerConnectivity
 // MARK: - Declaration
 
 class Ball: SCNNode {
-    
+
     /// The radius of the ball
     private let ballRadius = CGFloat(0.02)
-    
-    /// The collor of the ball
-    private let ballColor = UIColor(red: 1.0, green: 0.6, blue: 0.2, alpha: 0.995)
-    
-    /// The rolling friction of the ball
+    private let ballColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 2/255.0, alpha: 1)
     private let ballRollingFriction = CGFloat(0.05)
-    
+
     /// The position where the ball is created
     private let ballStartPosition = SCNVector3(x: 0, y: -0.05, z: -0.2)
-    
+
     /// The force of the throw
     private let appliedForce = simd_make_float4(-1.7, 0, -2.0, 0)
-    
+
     /// The view controller of the player who thrown the ball
     weak var hostViewController: VilaPongVC?
-    
+
     /// The matrix that represents the position and orientation of the ball
     var positionAndOrientation:simd_float4x4?
-    
+
     var tableTransform:matrix_float4x4?
 
     // MARK: - Initializer
@@ -44,7 +40,7 @@ class Ball: SCNNode {
         super.init()
         buildBall()
     }
-    
+
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
     }
@@ -68,7 +64,7 @@ class Ball: SCNNode {
         physicsBody.rollingFriction = ballRollingFriction
         self.physicsBody = physicsBody
     }
-    
+
     /**
      Adds the ball to the scene view.
      - Parameters:
@@ -77,7 +73,7 @@ class Ball: SCNNode {
     public func addTo(_ sceneView: ARSCNView) {
         sceneView.scene.rootNode.addChildNode(self)
     }
-    
+
     /**
      Applies the force to the physics body of the ball.
      - Parameters:
@@ -102,7 +98,7 @@ class Ball: SCNNode {
      */
     public func position(in sceneView: ARSCNView, from me: Bool, on tableNode: SCNNode) {
         if me {
-            
+
             if let pov = sceneView.pointOfView {
                 updatePositionAndOrientationOf(node: self, withPosition: ballStartPosition, relativeTo: pov, on: tableNode)
                 self.tableTransform = transform(for: tableNode)
@@ -116,8 +112,8 @@ class Ball: SCNNode {
             updateTransform(of: self, with: selfPosition)
         }
     }
-    
-    
+
+
     /**
      Applies the reverse force that it was applied to the physics body of the ball.
      - Parameters:
@@ -152,7 +148,7 @@ class Ball: SCNNode {
         }
         updateTransform(of: node, with: selfPosition)
     }
-    
+
 
     /**
      Created a matrix that represents position based on a vector.
