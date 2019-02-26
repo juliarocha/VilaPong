@@ -1,9 +1,9 @@
 //
-//  Physics.swift
-//  BeerPong
+//  PhysicsProtocol.swift
+//  ArPUCRio
 //
 //  Created by Julia Rocha on 12/02/19.
-//  Copyright © 2019 Nathalia Inacio. All rights reserved.
+//  Copyright © 2019 Apple Developer Academy 2018 | PUC-Rio. All rights reserved.
 //
 
 import Foundation
@@ -11,10 +11,40 @@ import ARKit
 import UIKit
 import SceneKit
 
+// MARK: - Declaration
+
 protocol Physics {
+    
+    /**
+     Function that add all physics related to the scene to a node.
+     
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addPhysics(to node: SCNNode)
+    
+    /**
+     Function that add the table physics to a node.
+     
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addTablePhysics(to node: SCNNode)
+    
+    /**
+     Function that add the cups physics to a node
+     
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addCupsPhysics(to node: SCNNode)
+    
+    /**
+     Function that add the floor physics to a node
+     
+     - Parameters:
+        - to node: the node that will be applyed the physics.
+     */
     func addFloorPhysics(to node: SCNNode) 
 }
 
@@ -22,14 +52,14 @@ extension Physics {
     
     // MARK: - Physics Configuration
     
-    /// - Tag: Adding all physics
+    /// Function to add all physics
     func addPhysics(to node: SCNNode) {
         addTablePhysics(to: node)
         addCupsPhysics(to: node)
         addFloorPhysics(to: node)
     }
     
-    /// - Tag: Adding table physics
+    /// Function to add table physics
     func addTablePhysics(to node: SCNNode) {
         let tableRestitution = CGFloat(1.3)
         let legThickness = CGFloat(0.06)
@@ -66,7 +96,7 @@ extension Physics {
         }
     }
     
-    /// - Tag: Adding cups physics
+    /// Function to add cups physics
     func addCupsPhysics(to node: SCNNode) {
         let bottomRestitution = CGFloat(0.0)
         let sideRestitution = CGFloat(0.1)
@@ -99,7 +129,6 @@ extension Physics {
         } else {
             fatalError("Error finding cups")
         }
-        
         if let cupsNode = node.childNode(withName: cupsName2, recursively: true) {
             for cup in cupsNode.childNodes {
                 for child in cup.childNodes {
@@ -127,12 +156,11 @@ extension Physics {
         }
     }
     
-    /// - Tag: Adding floor physics
+    /// Function to add floor physics
     func addFloorPhysics(to node: SCNNode) {
         let floorRollingFriction = CGFloat(0.05)
         let floorRestitutuion = CGFloat(1.1)
         let floorName = "floor"
-        
         if let floorNode = node.childNode(withName: floorName, recursively: true) {
             let floorPhysics = SCNPhysicsBody(type: .static, shape: nil)
             floorPhysics.rollingFriction = floorRollingFriction
