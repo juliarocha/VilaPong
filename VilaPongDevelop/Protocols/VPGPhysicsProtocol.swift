@@ -47,13 +47,6 @@ protocol Physics {
      */
     func addFloorPhysics(to node: SCNNode)
     
-    /**
-     Function that add the table triangles physics to a node.
-     
-     - Parameters:
-        - to node: the node that will be applyed the physics.
-     */
-    func addTrianglesPhysics(to node: SCNNode)
 }
 
 extension Physics {
@@ -65,48 +58,7 @@ extension Physics {
         addTablePhysics(to: node)
         addCupsPhysics(to: node)
         addFloorPhysics(to: node)
-        addTrianglesPhysics(to: node)
     }
-
-    
-
-    /// - Tag: Adding triangles physics.
-    func addTrianglesPhysics(to node: SCNNode) {
-        let triangleRestitution = CGFloat(1.3)
-        let triangleHeight = CGFloat(0.018)
-        let triangleWidth = CGFloat(0.911)
-        let triangleLength = CGFloat(0.607)
-        let triangleName = "triangle"
-        let triangle2Name = "triangle2"
-        let redtriangleName = "red"
-        let bluetriangleName = "blue"
-        if let triangleNode = node.childNode(withName: triangleName, recursively: true) {
-            if let redtriangleNode = triangleNode.childNode(withName: redtriangleName, recursively: true) {
-                let triangleShape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
-                let trianglePhysics = SCNPhysicsBody(type: .static, shape: triangleShape)
-                trianglePhysics.restitution = triangleRestitution
-                redtriangleNode.physicsBody = trianglePhysics
-            } else {
-                fatalError("Error finding red triangle")
-            }
-        } else {
-            fatalError("Error finding triangle")
-        }
-        if let triangle2Node = node.childNode(withName: triangle2Name, recursively: true) {
-            if let bluetriangleNode = triangle2Node.childNode(withName: bluetriangleName, recursively: true) {
-                let triangle2Shape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
-                let triangle2Physics = SCNPhysicsBody(type: .static, shape: triangle2Shape)
-                triangle2Physics.restitution = triangleRestitution
-                bluetriangleNode.physicsBody = triangle2Physics
-            } else {
-                fatalError("Error finding blue triangle")
-            }
-        } else {
-            fatalError("Error finding triangle 2")
-        }
-    }
-
-
 
 
     /// - Tag: Adding table physics.
