@@ -15,7 +15,7 @@ import ARKit
 
 protocol ARSharer {
     
-    /// The reference to the multipeer session
+    /// The reference to the multipeer session.
     var multipeerSession:MultipeerSession? {get set}
     
     /**
@@ -27,14 +27,6 @@ protocol ARSharer {
      */
     func getWorldMap(with sceneView: ARSCNView, to multipeerSession:MultipeerSession)
     
-    /**
-     Sends a game event, like throwing a ball, to all peers in session.
-     
-     - Parameters:
-        - with gameEvent: the game event that will be sent.
-        - to multipeerSession: the multipeer session.
-     */
-//    func sendGameEvent(with gameEvent:GameEvent, to multipeerSession:MultipeerSession)
 }
 
 extension ARSharer {
@@ -48,14 +40,6 @@ extension ARSharer {
             multipeerSession.sendToAllPeers(data)
         }
     }
-    
-//    // FIXME: - Not encoding data
-//    func sendGameEvent(with gameEvent:GameEvent, to multipeerSession:MultipeerSession) {
-//        guard let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: gameEvent, requiringSecureCoding: true) else {
-//            fatalError("can't encode game event")
-//        }
-//        multipeerSession.sendToAllPeers(encodedData)
-//    }
     
 }
 

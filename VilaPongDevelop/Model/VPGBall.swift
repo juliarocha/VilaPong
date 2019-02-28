@@ -13,24 +13,22 @@ import MultipeerConnectivity
 
 class Ball: SCNNode {
 
-    /// The radius of the ball
+    /// The radius of the ball.
     private let ballRadius = CGFloat(0.02)
     
-    /// The ball color
+    /// The ball color.
     private let ballColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 2/255.0, alpha: 1)
     
-    /// The ball rolling friction value
+    /// The ball rolling friction value.
     private let ballRollingFriction = CGFloat(0.05)
 
-    /// The position where the ball is created
-//    private let ballStartPosition = SCNVector3(x: 0, y: -0.05, z: -0.2)
-
-    /// The force of the throw
+    /// The force of the throw.
     private let appliedForce = simd_make_float4(-1.7, 0, -2.0, 0)
 
-    /// The matrix that represents the position and orientation of the ball
+    /// The matrix that represents the position and orientation of the ball.
     var positionAndOrientation:simd_float4x4?
     
+    /// The camera from the scene view where the ball is.
     var myCamera: ARCamera?
     
     var gameTable: SCNNode?
@@ -112,6 +110,7 @@ class Ball: SCNNode {
         }
     }
 
+    // FIXME: - Get a transform from the table to sync worlds
     /**
      Transforms a node based on a matrix.
      - Parameters:

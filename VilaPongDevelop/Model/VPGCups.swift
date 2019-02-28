@@ -13,7 +13,7 @@ import SceneKit
 
 class Cups:SCNNode {
 
-    // MARK: - Initializer
+    // MARK: - Initialization
     override init() {
         super.init()
 

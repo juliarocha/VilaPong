@@ -15,12 +15,11 @@ import SceneKit
 
 protocol Animations {
     
-    /// Array of all the sunk nodes
+    /// Array of all the sunk nodes.
     var sunkCups: [SCNNode] { get set }
     
     /**
      Makes a fade out animation on the cup and the ball and hides both nodes.
-     
      - Parameters:
         - cup: The sunk cup node.
         - ball: The ball node.
@@ -29,7 +28,6 @@ protocol Animations {
     
     /**
      Makes a fade out animation on a node for a defined duration.
-     
      - Parameters:
         - node: The node to be animated.
         - duration: The duration of the animation.
@@ -38,7 +36,6 @@ protocol Animations {
     
     /**
      Hides a node.
-     
      - Parameters:
         - node: The node to be animated.
      */
@@ -49,7 +46,7 @@ extension Animations {
     
     // MARK: - Animations
    
-    /// Function that fades out a cup and ball
+    /// Function that fades out a cup and ball.
     func fadeOut(_ cup: SCNNode, _ ball: SCNNode) {
         let shortFade = 0.1
         fade(cup, duration: shortFade)
@@ -58,7 +55,7 @@ extension Animations {
         hide(ball)
     }
     
-    /// Function to fade node
+    /// Function to fade node.
     func fade(_ node: SCNNode, duration: Double) {
         SCNTransaction.begin()
         SCNTransaction.animationDuration = duration
@@ -66,7 +63,7 @@ extension Animations {
         SCNTransaction.commit()
     }
     
-    /// Function to hide node
+    /// Function to hide node.
     func hide(_ node: SCNNode) {
         let hideTime = 0.1
         SCNTransaction.begin()

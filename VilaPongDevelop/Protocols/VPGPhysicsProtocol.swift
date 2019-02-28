@@ -32,7 +32,7 @@ protocol Physics {
     func addTablePhysics(to node: SCNNode)
 
     /**
-     Function that add the cups physics to a node
+     Function that add the cups physics to a node.
 
      - Parameters:
         - to node: the node that will be applyed the physics.
@@ -40,18 +40,18 @@ protocol Physics {
     func addCupsPhysics(to node: SCNNode)
     
     /**
-     Function that add the floor physics to a node
+     Function that add the floor physics to a node.
      
      - Parameters:
-     - to node: the node that will be applyed the physics.
+        - to node: the node that will be applyed the physics.
      */
     func addFloorPhysics(to node: SCNNode)
     
     /**
-     Function that add the table triangles physics to a node
+     Function that add the table triangles physics to a node.
      
      - Parameters:
-     - to node: the node that will be applyed the physics.
+        - to node: the node that will be applyed the physics.
      */
     func addTrianglesPhysics(to node: SCNNode)
 }
@@ -60,7 +60,7 @@ extension Physics {
 
     // MARK: - Physics Configuration
 
-    /// Function to add all physics
+    /// Function to add all physics.
     func addPhysics(to node: SCNNode) {
         addTablePhysics(to: node)
         addCupsPhysics(to: node)
@@ -70,7 +70,7 @@ extension Physics {
 
     
 
-    /// - Tag: Adding triangles physics
+    /// - Tag: Adding triangles physics.
     func addTrianglesPhysics(to node: SCNNode) {
         let triangleRestitution = CGFloat(1.3)
         let triangleHeight = CGFloat(0.018)
@@ -109,7 +109,7 @@ extension Physics {
 
 
 
-    /// - Tag: Adding table physics
+    /// - Tag: Adding table physics.
     func addTablePhysics(to node: SCNNode) {
         let tableRestitution = CGFloat(1.3)
         let legThickness = CGFloat(0.06)
@@ -146,7 +146,7 @@ extension Physics {
         }
     }
 
-    /// Function to add cups physics
+    /// Function to add cups physics.
     func addCupsPhysics(to node: SCNNode) {
         let bottomRestitution = CGFloat(0.0)
         let sideRestitution = CGFloat(0.1)
@@ -211,7 +211,7 @@ extension Physics {
 
     }
 
-    /// Function to add floor physics
+    /// Function to add floor physics.
     func addFloorPhysics(to node: SCNNode) {
         let floorRollingFriction = CGFloat(0.05)
         let floorRestitutuion = CGFloat(1.1)

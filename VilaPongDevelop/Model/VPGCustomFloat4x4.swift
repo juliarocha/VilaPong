@@ -13,7 +13,7 @@ import simd
 
 class CustomFloat4x4: Codable {
     
-    /// A array that represents a float matrix
+    /// A array that represents a float matrix.
     var values:[[Float]] = []
     
     // MARK: - Initialization
@@ -30,7 +30,7 @@ class CustomFloat4x4: Codable {
     
     // MARK: - Methods
     
-    /// Conversion to simd_float4x4
+    /// Conversion to simd_float4x4.
     var asSimd_float4x4:simd_float4x4 {
         var columns:[float4] = []
         for column in values {
@@ -45,7 +45,7 @@ class CustomFloat4x4: Codable {
 
 extension simd_float4x4 {
     
-    /// Conversion to CustomFloat4x4
+    /// Conversion to CustomFloat4x4.
     var asCustomFloat4x4:CustomFloat4x4 {
         return CustomFloat4x4(simd_float4x4: self)
     }

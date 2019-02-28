@@ -24,12 +24,12 @@ class MultipeerSession:NSObject {
     private var session: MCSession!
     
     /// Service responsable for making my peer visible.
-    private var serviceAdvertiser: MCNearbyServiceAdvertiser!
+    var serviceAdvertiser: MCNearbyServiceAdvertiser!
     
     /// Service responsable for searching for visible peers.
-    private var serviceBrowser: MCNearbyServiceBrowser!
+    var serviceBrowser: MCNearbyServiceBrowser!
 
-    /// Function that handle data received via multipeer
+    /// Function that handle data received via multipeer.
     private let receivedDataHandler: (Data, MCPeerID) -> Void
     
     // MARK: - Initialization
@@ -38,7 +38,7 @@ class MultipeerSession:NSObject {
      Initializes the Multipeer sessiong, setting the delegates and the services.
      
      - Parameters:
-        - the function that will handle data when received
+        - the function that will handle data when received.
      */
     init(receivedDataHandler: @escaping (Data, MCPeerID) -> Void ) {
         self.receivedDataHandler = receivedDataHandler
@@ -58,7 +58,7 @@ class MultipeerSession:NSObject {
         serviceBrowser.startBrowsingForPeers()
     }
     
-    /// Funtion to send data to all connected peers
+    /// Funtion to send data to all connected peers.
     func sendToAllPeers(_ data: Data) {
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
@@ -67,7 +67,7 @@ class MultipeerSession:NSObject {
         }
     }
     
-    /// Peers connected to my session
+    /// Peers connected to my session.
     var connectedPeers: [MCPeerID] {
         return session.connectedPeers
     }
@@ -82,7 +82,7 @@ extension MultipeerSession: MCSessionDelegate {
         // not used
     }
     
-    /// Function that sets the function called when receive data
+    /// Function that sets the function called when receive data.
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         receivedDataHandler(data, peerID)
         
@@ -105,7 +105,7 @@ extension MultipeerSession: MCSessionDelegate {
 // - MARK: Browser Delegate
 extension MultipeerSession: MCNearbyServiceBrowserDelegate {
     
-    /// Function called when found a peer
+    /// Function called when found a peer.
     public func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String: String]?) {
         // Invite the new peer to the session.
         browser.invitePeer(peerID, to: session, withContext: nil, timeout: 10)

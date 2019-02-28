@@ -189,29 +189,6 @@
                                     <outletCollection property="gestureRecognizers" destination="0gP-0b-mlo" appends="YES" id="Bjp-eC-9Fb"/>
                                 </connections>
                             </arscnView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7n1-lm-7Eq">
-                                <rect key="frame" x="118" y="704" width="139" height="34"/>
-                                <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uy-QG-6J9" customClass="VPGRoundedButton" customModule="VilaPongDevelop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="13" minY="8" maxX="13" maxY="8"/>
-                                        <state key="normal" title="Load Experience"/>
-                                        <connections>
-                                            <action selector="loadExperience:" destination="7dh-A0-qGE" eventType="touchUpInside" id="Xac-0y-p4U"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gad-7G-M17" customClass="VPGRoundedButton" customModule="VilaPongDevelop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="13" minY="8" maxX="13" maxY="8"/>
-                                        <state key="normal" title="Save Experience"/>
-                                        <connections>
-                                            <action selector="saveExperience:" destination="7dh-A0-qGE" eventType="touchUpInside" id="LXd-41-0lM"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37h-bD-Iyn">
                                 <rect key="frame" x="95" y="658" width="185" height="38"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pkc-hu-yuO">
@@ -257,9 +234,9 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZF-S8-SMn" userLabel="Mapping Status View">
-                                <rect key="frame" x="104.66666666666669" y="60" width="166" height="57"/>
+                                <rect key="frame" x="104.33333333333333" y="60" width="166.66666666666669" height="56.666666666666657"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uqy-xA-7xQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="166" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="166.66666666666669" height="56.666666666666657"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mapping: Limited Tracking: Initializing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD6-EU-VHg">
@@ -475,46 +452,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcb-eq-RKt">
-                                <rect key="frame" x="30" y="73" width="30.333333333333329" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addSnapshot:" destination="7dh-A0-qGE" eventType="touchUpInside" id="LOm-k0-E4W"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uZF-S8-SMn" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="0nt-rL-XqS"/>
                             <constraint firstItem="I2r-gm-OfA" firstAttribute="centerY" secondItem="loo-cG-myf" secondAttribute="centerY" id="90l-ql-ans"/>
                             <constraint firstItem="37h-bD-Iyn" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="AKe-xr-vIf"/>
-                            <constraint firstItem="7n1-lm-7Eq" firstAttribute="top" secondItem="37h-bD-Iyn" secondAttribute="bottom" constant="8" id="Afi-KY-GrP"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="loo-cG-myf" secondAttribute="bottom" id="Hhd-uh-Izd"/>
                             <constraint firstItem="I2r-gm-OfA" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="Kx0-Hw-2fr"/>
                             <constraint firstItem="hys-e8-1xQ" firstAttribute="centerY" secondItem="loo-cG-myf" secondAttribute="centerY" id="L4b-1b-Uwq"/>
-                            <constraint firstItem="7n1-lm-7Eq" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="M56-UG-ENc"/>
                             <constraint firstItem="cOo-FY-E3u" firstAttribute="top" secondItem="71x-2l-AWw" secondAttribute="top" constant="16" id="NFi-fW-FC6"/>
                             <constraint firstItem="37h-bD-Iyn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="71x-2l-AWw" secondAttribute="leading" constant="20" id="O9Z-UY-YPe"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="loo-cG-myf" secondAttribute="leading" id="UTU-YA-j2I"/>
                             <constraint firstItem="tZE-BZ-r4a" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="XRK-EW-gb1"/>
                             <constraint firstAttribute="trailing" secondItem="cOo-FY-E3u" secondAttribute="trailing" constant="16" id="XaW-Jf-LNj"/>
-                            <constraint firstItem="Kcb-eq-RKt" firstAttribute="top" secondItem="71x-2l-AWw" secondAttribute="top" constant="29" id="YAh-Xg-CbN"/>
                             <constraint firstItem="hys-e8-1xQ" firstAttribute="centerX" secondItem="loo-cG-myf" secondAttribute="centerX" id="ZF2-0k-FUB"/>
-                            <constraint firstItem="71x-2l-AWw" firstAttribute="bottom" secondItem="7n1-lm-7Eq" secondAttribute="bottom" constant="40" id="fzR-Xp-aNx"/>
                             <constraint firstItem="tZE-BZ-r4a" firstAttribute="centerY" secondItem="loo-cG-myf" secondAttribute="centerY" id="i0g-uC-S6v"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="loo-cG-myf" secondAttribute="trailing" id="ldO-28-oR5"/>
                             <constraint firstItem="uZF-S8-SMn" firstAttribute="top" secondItem="71x-2l-AWw" secondAttribute="top" constant="16" id="ocS-dR-eGg"/>
                             <constraint firstItem="71x-2l-AWw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="37h-bD-Iyn" secondAttribute="trailing" constant="20" id="sBt-yC-qUi"/>
                             <constraint firstItem="cOo-FY-E3u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uZF-S8-SMn" secondAttribute="trailing" constant="8" id="ukj-lQ-LwR"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="loo-cG-myf" secondAttribute="top" id="vZb-xW-Wfg"/>
-                            <constraint firstItem="Kcb-eq-RKt" firstAttribute="leading" secondItem="71x-2l-AWw" secondAttribute="leading" constant="30" id="wYm-xb-4Cg"/>
-                            <constraint firstItem="uZF-S8-SMn" firstAttribute="leading" secondItem="Kcb-eq-RKt" secondAttribute="trailing" constant="44.329999999999998" id="z7D-cB-z0b"/>
+                            <constraint firstItem="37h-bD-Iyn" firstAttribute="top" secondItem="tZE-BZ-r4a" secondAttribute="bottom" constant="71" id="yOz-7N-VQc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="71x-2l-AWw"/>
                     </view>
                     <connections>
-                        <outlet property="loadExperienceButton" destination="6uy-QG-6J9" id="ztL-gU-Vqq"/>
-                        <outlet property="saveExperienceButton" destination="gad-7G-M17" id="yj3-eb-u44"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="sgr-g8-kdG"/>
                         <outlet property="sessionInfoLabel" destination="hCE-IA-wLv" id="fqx-0o-IdX"/>
                         <outlet property="sessionInfoView" destination="37h-bD-Iyn" id="e6g-gN-reW"/>

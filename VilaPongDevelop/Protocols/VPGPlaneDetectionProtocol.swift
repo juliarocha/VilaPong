@@ -15,19 +15,17 @@ import SceneKit
 
 protocol PlaneDetection {
     
-    /// The scene view that will detect planes
+    /// The scene view that will detect planes.
     var fromSceneView:ARSCNView? {get set}
     
     /**
      Add a horizontal plane detection to a scene view.
-     
      - Attention: Requires a reference to a scene view.
      */
     func addHorizontalPlaneDetection()
     
     /**
      Disable the horizontal plane detection of scene view.
-     
      - Attention: Requires a reference to a scene view.
      */
     func disablePlaneScanning()
@@ -36,7 +34,7 @@ protocol PlaneDetection {
 
 extension PlaneDetection {
     
-    /// Function to add the horizontal plane detection
+    /// Function to add the horizontal plane detection.
     func addHorizontalPlaneDetection() {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
@@ -46,7 +44,7 @@ extension PlaneDetection {
         sceneView.session.run(configuration)
     }
     
-    /// Function to disable the horizontal plane detection
+    /// Function to disable the horizontal plane detection.
     func disablePlaneScanning() {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = []

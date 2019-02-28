@@ -12,6 +12,7 @@
 		11E9720A209A355F006E3D26 /* VPGUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E97209209A355F006E3D26 /* VPGUtilities.swift */; };
 		152764252225A18B00FB1420 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152764242225A18B00FB1420 /* CodableExtensions.swift */; };
 		152764272225A1D200FB1420 /* VPGCustomFloat4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152764262225A1D200FB1420 /* VPGCustomFloat4x4.swift */; };
+		153B229A2228566B0047EEBC /* mappedWorld.arexperience in Resources */ = {isa = PBXBuildFile; fileRef = 153B22992228566A0047EEBC /* mappedWorld.arexperience */; };
 		1550DBFE221D038F003DB615 /* VPGPhysicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */; };
 		1550DC00221D05A6003DB615 /* VPGBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DBFF221D05A6003DB615 /* VPGBall.swift */; };
 		1550DC02221D07A4003DB615 /* VPGCups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC01221D07A4003DB615 /* VPGCups.swift */; };
@@ -34,6 +35,7 @@
 		11E97209209A355F006E3D26 /* VPGUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGUtilities.swift; sourceTree = "<group>"; };
 		152764242225A18B00FB1420 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		152764262225A1D200FB1420 /* VPGCustomFloat4x4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGCustomFloat4x4.swift; sourceTree = "<group>"; };
+		153B22992228566A0047EEBC /* mappedWorld.arexperience */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mappedWorld.arexperience; sourceTree = "<group>"; };
 		1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGPhysicsProtocol.swift; sourceTree = "<group>"; };
 		1550DBFF221D05A6003DB615 /* VPGBall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGBall.swift; sourceTree = "<group>"; };
 		1550DC01221D07A4003DB615 /* VPGCups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGCups.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		842316DE1F2030C300D189D1 /* VilaPongDevelop */ = {
 			isa = PBXGroup;
 			children = (
+				153B22992228566A0047EEBC /* mappedWorld.arexperience */,
 				152764232225A17E00FB1420 /* Extentions */,
 				E209FA36222096BA00958081 /* College Block.otf */,
 				1550DC0F221D3210003DB615 /* Connectivity */,
@@ -217,6 +220,7 @@
 				112FE5671F4F95A200BF85EA /* Assets.xcassets in Resources */,
 				842316E71F2030C300D189D1 /* VilaPong.storyboard in Resources */,
 				E209FA592224679400958081 /* College Block.otf in Resources */,
+				153B229A2228566B0047EEBC /* mappedWorld.arexperience in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
