@@ -38,7 +38,21 @@ protocol Physics {
         - to node: the node that will be applyed the physics.
      */
     func addCupsPhysics(to node: SCNNode)
+    
+    /**
+     Function that add the floor physics to a node
+     
+     - Parameters:
+     - to node: the node that will be applyed the physics.
+     */
     func addFloorPhysics(to node: SCNNode)
+    
+    /**
+     Function that add the table triangles physics to a node
+     
+     - Parameters:
+     - to node: the node that will be applyed the physics.
+     */
     func addTrianglesPhysics(to node: SCNNode)
 }
 
@@ -66,9 +80,7 @@ extension Physics {
         let triangle2Name = "triangle2"
         let redtriangleName = "red"
         let bluetriangleName = "blue"
-
         if let triangleNode = node.childNode(withName: triangleName, recursively: true) {
-
             if let redtriangleNode = triangleNode.childNode(withName: redtriangleName, recursively: true) {
                 let triangleShape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
                 let trianglePhysics = SCNPhysicsBody(type: .static, shape: triangleShape)
@@ -80,9 +92,7 @@ extension Physics {
         } else {
             fatalError("Error finding triangle")
         }
-
         if let triangle2Node = node.childNode(withName: triangle2Name, recursively: true) {
-
             if let bluetriangleNode = triangle2Node.childNode(withName: bluetriangleName, recursively: true) {
                 let triangle2Shape = SCNPhysicsShape(geometry: SCNBox(width: triangleWidth, height: triangleHeight, length: triangleLength, chamferRadius: 0))
                 let triangle2Physics = SCNPhysicsBody(type: .static, shape: triangle2Shape)

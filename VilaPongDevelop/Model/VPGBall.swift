@@ -15,7 +15,11 @@ class Ball: SCNNode {
 
     /// The radius of the ball
     private let ballRadius = CGFloat(0.02)
+    
+    /// The ball color
     private let ballColor = UIColor(red: 240/255.0, green: 162/255.0, blue: 2/255.0, alpha: 1)
+    
+    /// The ball rolling friction value
     private let ballRollingFriction = CGFloat(0.05)
 
     /// The position where the ball is created
@@ -33,6 +37,7 @@ class Ball: SCNNode {
     var tableTransform:matrix_float4x4?
 
     // MARK: - Initializer
+    
     /**
      Builds the ball.
      */
@@ -46,6 +51,7 @@ class Ball: SCNNode {
     }
 
     // MARK: - Methods
+    
     /**
      Builds the ball based on its geometry and physics body.
      */

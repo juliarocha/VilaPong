@@ -25,16 +25,11 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var snapshotThumbnail: UIImageView!
 
-
     // MARK: - Action
 
     @IBAction func cancel(_ sender: Any) {
-
          self.dismiss(animated: false, completion: nil)
-
     }
-
-
 
     // MARK: - Game Logistics
 
@@ -81,8 +76,6 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
         if mapDataFromFile != nil {
             self.loadExperienceButton.isHidden = false
         }
-
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
