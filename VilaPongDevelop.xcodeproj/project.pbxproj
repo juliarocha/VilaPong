@@ -21,11 +21,10 @@
 		1550DC0E221D3208003DB615 /* MultipeerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DC0C221D3208003DB615 /* MultipeerSession.swift */; };
 		5CB92B4F20D852B0004D38D8 /* VPGSnapshotAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB92B4E20D852B0004D38D8 /* VPGSnapshotAnchor.swift */; };
 		842316E01F2030C300D189D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842316DF1F2030C300D189D1 /* AppDelegate.swift */; };
-		842316E41F2030C300D189D1 /* VilaPongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842316E31F2030C300D189D1 /* VilaPongVC.swift */; };
+		842316E41F2030C300D189D1 /* VilaPongGamePlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842316E31F2030C300D189D1 /* VilaPongGamePlayVC.swift */; };
 		842316E71F2030C300D189D1 /* VilaPong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842316E51F2030C300D189D1 /* VilaPong.storyboard */; };
-		842316EC1F2030C300D189D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */; };
 		84ABEA0A1F3D15E70052D547 /* VilaPong.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 84ABEA091F3D15E70052D547 /* VilaPong.scnassets */; };
-		E209FA3822209ED200958081 /* VilaPongMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209FA3722209ED200958081 /* VilaPongMenuVC.swift */; };
+		E209FA3822209ED200958081 /* VilaPongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209FA3722209ED200958081 /* VilaPongVC.swift */; };
 		E209FA592224679400958081 /* College Block.otf in Resources */ = {isa = PBXBuildFile; fileRef = E209FA36222096BA00958081 /* College Block.otf */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +44,12 @@
 		5CB92B4E20D852B0004D38D8 /* VPGSnapshotAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPGSnapshotAnchor.swift; sourceTree = "<group>"; };
 		842316DC1F2030C300D189D1 /* VilaPongDevelop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VilaPongDevelop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842316DF1F2030C300D189D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		842316E31F2030C300D189D1 /* VilaPongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilaPongVC.swift; sourceTree = "<group>"; };
+		842316E31F2030C300D189D1 /* VilaPongGamePlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilaPongGamePlayVC.swift; sourceTree = "<group>"; };
 		842316E61F2030C300D189D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VilaPong.storyboard; sourceTree = "<group>"; };
-		842316EB1F2030C300D189D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842316ED1F2030C300D189D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84ABEA091F3D15E70052D547 /* VilaPong.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = VilaPong.scnassets; sourceTree = "<group>"; };
 		E209FA36222096BA00958081 /* College Block.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "College Block.otf"; sourceTree = "<group>"; };
-		E209FA3722209ED200958081 /* VilaPongMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilaPongMenuVC.swift; sourceTree = "<group>"; };
+		E209FA3722209ED200958081 /* VilaPongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilaPongVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +74,8 @@
 		1550DC07221D30A7003DB615 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				842316E31F2030C300D189D1 /* VilaPongVC.swift */,
-				E209FA3722209ED200958081 /* VilaPongMenuVC.swift */,
+				842316E31F2030C300D189D1 /* VilaPongGamePlayVC.swift */,
+				E209FA3722209ED200958081 /* VilaPongVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				842316E51F2030C300D189D1 /* VilaPong.storyboard */,
-				842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ABEA0A1F3D15E70052D547 /* VilaPong.scnassets in Resources */,
-				842316EC1F2030C300D189D1 /* LaunchScreen.storyboard in Resources */,
 				112FE5671F4F95A200BF85EA /* Assets.xcassets in Resources */,
 				842316E71F2030C300D189D1 /* VilaPong.storyboard in Resources */,
 				E209FA592224679400958081 /* College Block.otf in Resources */,
@@ -242,9 +238,9 @@
 				111DC86920ACAB690037F7B1 /* VPGRoundedButton.swift in Sources */,
 				1550DC02221D07A4003DB615 /* VPGCups.swift in Sources */,
 				152764272225A1D200FB1420 /* VPGCustomFloat4x4.swift in Sources */,
-				842316E41F2030C300D189D1 /* VilaPongVC.swift in Sources */,
+				842316E41F2030C300D189D1 /* VilaPongGamePlayVC.swift in Sources */,
 				1550DC0E221D3208003DB615 /* MultipeerSession.swift in Sources */,
-				E209FA3822209ED200958081 /* VilaPongMenuVC.swift in Sources */,
+				E209FA3822209ED200958081 /* VilaPongVC.swift in Sources */,
 				842316E01F2030C300D189D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,14 +254,6 @@
 				842316E61F2030C300D189D1 /* Base */,
 			);
 			name = VilaPong.storyboard;
-			sourceTree = "<group>";
-		};
-		842316EA1F2030C300D189D1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				842316EB1F2030C300D189D1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ARKit
 
 // MARK: - Encodable
 
@@ -24,4 +25,14 @@ extension Encodable {
         return nil
     }
 }
+
+extension Array where Element == ARAnchor {
+    func contains(_ anchors:[ARAnchor])->Bool {
+        for anchor in anchors {
+            if self.contains(anchor) { return true }
+        } //else
+        return false
+    }
+}
+
 
