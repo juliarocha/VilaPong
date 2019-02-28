@@ -10,7 +10,7 @@
 		111DC86920ACAB690037F7B1 /* VPGRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DC86820ACAB690037F7B1 /* VPGRoundedButton.swift */; };
 		112FE5671F4F95A200BF85EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112FE5661F4F95A200BF85EA /* Assets.xcassets */; };
 		11E9720A209A355F006E3D26 /* VPGUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E97209209A355F006E3D26 /* VPGUtilities.swift */; };
-		152764252225A18B00FB1420 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152764242225A18B00FB1420 /* CodableExtensions.swift */; };
+		152764252225A18B00FB1420 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152764242225A18B00FB1420 /* Extensions.swift */; };
 		152764272225A1D200FB1420 /* VPGCustomFloat4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152764262225A1D200FB1420 /* VPGCustomFloat4x4.swift */; };
 		153B229A2228566B0047EEBC /* mappedWorld.arexperience in Resources */ = {isa = PBXBuildFile; fileRef = 153B22992228566A0047EEBC /* mappedWorld.arexperience */; };
 		1550DBFE221D038F003DB615 /* VPGPhysicsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */; };
@@ -33,7 +33,7 @@
 		111DC86820ACAB690037F7B1 /* VPGRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGRoundedButton.swift; sourceTree = "<group>"; };
 		112FE5661F4F95A200BF85EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11E97209209A355F006E3D26 /* VPGUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGUtilities.swift; sourceTree = "<group>"; };
-		152764242225A18B00FB1420 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		152764242225A18B00FB1420 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		152764262225A1D200FB1420 /* VPGCustomFloat4x4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGCustomFloat4x4.swift; sourceTree = "<group>"; };
 		153B22992228566A0047EEBC /* mappedWorld.arexperience */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mappedWorld.arexperience; sourceTree = "<group>"; };
 		1550DBFD221D038F003DB615 /* VPGPhysicsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPGPhysicsProtocol.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		152764232225A17E00FB1420 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				152764242225A18B00FB1420 /* CodableExtensions.swift */,
+				152764242225A18B00FB1420 /* Extensions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 				1550DC04221D07BA003DB615 /* VPGAnimationsProtocol.swift in Sources */,
 				11E9720A209A355F006E3D26 /* VPGUtilities.swift in Sources */,
 				1550DBFE221D038F003DB615 /* VPGPhysicsProtocol.swift in Sources */,
-				152764252225A18B00FB1420 /* CodableExtensions.swift in Sources */,
+				152764252225A18B00FB1420 /* Extensions.swift in Sources */,
 				5CB92B4F20D852B0004D38D8 /* VPGSnapshotAnchor.swift in Sources */,
 				1550DC06221D0F55003DB615 /* VPGPlaneDetectionProtocol.swift in Sources */,
 				111DC86920ACAB690037F7B1 /* VPGRoundedButton.swift in Sources */,

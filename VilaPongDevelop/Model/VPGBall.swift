@@ -30,8 +30,6 @@ class Ball: SCNNode {
     
     /// The camera from the scene view where the ball is.
     var myCamera: ARCamera?
-    
-    var gameTable: SCNNode?
 
     // MARK: - Initializer
     
@@ -110,7 +108,6 @@ class Ball: SCNNode {
         }
     }
 
-    // FIXME: - Get a transform from the table to sync worlds
     /**
      Transforms a node based on a matrix.
      - Parameters:
@@ -119,10 +116,6 @@ class Ball: SCNNode {
      */
     private func updateTransform(of node: SCNNode, with transform: simd_float4x4) {
         node.transform = SCNMatrix4(transform)
-//        guard let tableNode = self.gameTable else {
-//            fatalError("error getting game table")
-//        }
-//        convertTransform(node.transform, from: tableNode)
         self.positionAndOrientation = simd_float4x4(node.transform)
     }
 }
