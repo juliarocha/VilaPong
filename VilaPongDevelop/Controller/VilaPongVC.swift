@@ -25,15 +25,28 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var snapshotThumbnail: UIImageView!
 
-    // MARK: - Action
+
+    // MARK: - Actions
 
     @IBAction func cancel(_ sender: Any) {
          self.dismiss(animated: false, completion: nil)
     }
 
-    // MARK: - Game Logistics
 
-    /// TEMP
+    @IBAction func cancelView2(_ sender: Any) {
+
+          self.dismiss(animated: false, completion: nil)
+    }
+
+
+    @IBAction func playAgain(_ sender: Any) {
+
+        self.dismiss(animated: false, completion: nil)
+    }
+
+>>>>>>> 3a997af0fb01a297774df8e47055c2847875fe25
+
+    /// - Tag: Game Logics
     private var tablePlaced = false
     private var planeNode: SCNNode?
     var fromSceneView: ARSCNView?
@@ -116,7 +129,7 @@ class VilaPongVC: UIViewController, ARSessionDelegate, PlaneDetection {
     private func addLighting() {
         sceneView.autoenablesDefaultLighting = true
     }
-    
+
     // MARK: - ARSessionDelegate
 
     // TEMP

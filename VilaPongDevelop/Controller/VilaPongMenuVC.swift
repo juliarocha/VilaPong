@@ -34,13 +34,7 @@ class VilaPongMenuVC: UIViewController, ARSCNViewDelegate {
         sceneView.session.run(configuration)
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//
-//        // Pause the view's session
-////        sceneView.session.pause()
-//    }
-    
+
 
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
